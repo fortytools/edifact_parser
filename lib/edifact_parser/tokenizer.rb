@@ -27,9 +27,9 @@ module EdifactParser
     PLUS = /(?<!\?)\+/
     COLON = /(?<!\?)\:/
 
-    def initialize(io)
+    def initialize(io, qualifiers: QUALIFIERS)
       @ss = StringScanner.new io.read
-      @qualifiers = qualifier_regex
+      @qualifiers = qualifier_regex(qualifiers)
     end
 
     def next_token
@@ -57,10 +57,10 @@ module EdifactParser
 
     private
 
-    def qualifier_regex
+    def qualifier_regex(qualifiers)
       reg_ex_string = ""
 
-      QUALIFIERS.each do |qual|
+      qualifiers.each do |qual|
         reg_ex_string += "#{qual}|"
       end
 
