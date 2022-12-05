@@ -18,7 +18,7 @@ module EdifactParser
       'SEG', 'SEL', 'SEQ', 'SFI', 'SGP', 'SGU', 'SPR', 'SPS', 'STA', 'STC', 'STG', 'STS',
       'TAX', 'TCC', 'TDT', 'TEM', 'TMD', 'TMP', 'TOD', 'TPL', 'TRU', 'TSR', 'VLI' ]
 
-    OPTIONAL_BEGIN = /^UNA:\+\.\?\s'/
+    OPTIONAL_BEGIN = /^UNA:\+\,\?\s'/
     STRING = /[A-Za-z0-9\s\.]*(\?')*[A-Za-z0-9\s\.]*(\?\+)*[A-Za-z0-9\s\.]*(\?:)*[A-Za-z0-9\s\.]*/
     SPACE = /\s+/
     NUMBER = /[0-9]+(?=[\+:'])/
